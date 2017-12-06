@@ -29,7 +29,7 @@ public class Main {
         return new StringBuffer(s).reverse().toString();
     }
 
-    //much better o(1)
+    //better o(1)
     public String reverseString3(String s) {
         return new StringBuilder(s).reverse().toString();
     }
