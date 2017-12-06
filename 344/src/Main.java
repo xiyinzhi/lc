@@ -24,15 +24,28 @@ public class Main {
         return sb.toString();
     }
 
-    //better o(1)
+    //better o(1) 实际还是o(n)
     public String reverseString2(String s) {
         return new StringBuffer(s).reverse().toString();
     }
 
-    //better o(1)
+    //better o(1) 实际还是o(n)
     public String reverseString3(String s) {
         return new StringBuilder(s).reverse().toString();
     }
 
+    //much better o(n) 交换次数n/2
+    public String reverseString4(String s) {
+        char[] c= s.toCharArray();
+        int left = 0, right = c.length-1;
+        while(left<right)
+        {
+            char temp = c[left];
+            c[left] = c[right];
+            c[right] = temp;
+            left++;right--;
+        }
+        return new String(c);
+    }
 
 }
