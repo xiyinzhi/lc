@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -18,9 +20,12 @@ public class Main {
         }
 
         int[] output = m.twoSum(nums, target);
+        int[] output2 = m.twoSum(nums, target);
         System.out.println("Output:[" + output[0] + ", " + output[1] + "]");
+        System.out.println("Output2:[" + output2[0] + ", " + output2[1] + "]");
     }
 
+    // time-complexity o(n^2)
     public int[] twoSum(int[] nums, int target) {
         int n = nums.length;
         int[] output = new int[2];
@@ -32,6 +37,22 @@ public class Main {
                     return output;
                 }
             }
+        }
+        throw new IllegalArgumentException("wrong input");
+    }
+
+    // time-complexity o(n)
+    public int[] twoSum2(int[] nums, int target) {
+        int n = nums.length;
+        int[] output = new int[2];
+        Map<Integer, Integer> map = new HashMap();
+        for (int i = 0; i < n; i++) {
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i < n; i++) {
+            int key = target - nums[i];
+            if (map.containsKey(key) && map.get(key) != i)
+                return new int[]{i, map.get(key)};
         }
         throw new IllegalArgumentException("wrong input");
     }
