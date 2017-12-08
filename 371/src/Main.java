@@ -23,7 +23,6 @@ public class Main {
         if (b < 0) {
             b = ~b + 1;
         }
-
         if (a < b) {
             int temp = a;
             a = b;
@@ -57,5 +56,9 @@ public class Main {
             b >>= 1;
         }
         return Integer.valueOf(sb.toString(), 2);
+    }
+
+    public int getSubstraction(int a, int b){
+
     }
 }
