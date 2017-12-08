@@ -9,8 +9,11 @@ public class Main {
         Main m = new Main();
         int b = m.reverse(a);
         System.out.println("reverse:" + b);
+        int c = m.reverse2(a);
+        System.out.println("reverse2:" + c);
     }
 
+    //convert int to string
     public int reverse(int x) {
         String str1 = Integer.toString(x);
         boolean negative = false;
@@ -38,5 +41,17 @@ public class Main {
         return ans;
     }
 
-
+    //use division and mod
+    public int reverse2(int x) {
+        int ans = 0;
+        while (x != 0) {
+            ans = ans * 10 + x % 10;
+            x /= 10;
+            if (x != 0 && (ans < -214748364 || ans > 214748364)) {
+                ans = 0;
+                break;
+            }
+        }
+        return ans;
+    }
 }
