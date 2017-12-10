@@ -15,6 +15,7 @@ public class Main {
         }
         System.out.println("output:" + m.maxSubArray(nums));
         System.out.println("output2:" + m.maxSubArray2(nums));
+        System.out.println("output3:" + m.maxSubArray3(nums));
     }
 
     //brute force o(n^3)
@@ -56,5 +57,19 @@ public class Main {
         return max;
     }
 
+    //dp o(n)
+    public int maxSubArray3(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];//dp[i] means the maximum subArray ending with nums[i];
+        dp[0] = nums[0];
+        int max = dp[0];
+
+        for(int i = 1; i < n; i++){
+            dp[i] = nums[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);
+            max = Math.max(max, dp[i]);
+        }
+
+        return max;
+    }
 
 }
