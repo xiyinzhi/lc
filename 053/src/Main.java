@@ -16,7 +16,7 @@ public class Main {
         System.out.println("output:" + m.maxSubArray(nums));
     }
 
-    //bruce force o(n^3)
+    //bruce forte o(n^3)
     public int maxSubArray(int[] nums) {
         int n = nums.length;
         int max = nums[0];
