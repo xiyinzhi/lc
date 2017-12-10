@@ -14,9 +14,10 @@ public class Main {
             nums[i] = Integer.parseInt(strings[i]);
         }
         System.out.println("output:" + m.maxSubArray(nums));
+        System.out.println("output2:" + m.maxSubArray2(nums));
     }
 
-    //bruce forte o(n^3)
+    //brute force o(n^3)
     public int maxSubArray(int[] nums) {
         int n = nums.length;
         int max = nums[0];
@@ -36,5 +37,24 @@ public class Main {
         }
         return sum;
     }
+
+    //greedy o(n)
+    public int maxSubArray2(int[] nums) {
+        int n = nums.length;
+        int max = nums[0];
+        int sum = nums[0];
+        for (int i = 1; i < n; i++) {
+            if (sum < 0) {
+                sum = nums[i];
+            } else {
+                sum += nums[i];
+            }
+            if (sum > max) {
+                max = sum;
+            }
+        }
+        return max;
+    }
+
 
 }
