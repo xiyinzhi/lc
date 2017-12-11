@@ -6,7 +6,7 @@ public class Main {
         Main m = new Main();
         Scanner input = new Scanner(System.in);
         System.out.println("input:");
-        long n = input.nextLong();
+        int n = input.nextInt();
         System.out.println("output:" + m.hammingWeight2(n));
     }
 
@@ -23,14 +23,12 @@ public class Main {
         return count;
     }
 
-    //use >> o(1)
-    public int hammingWeight2(long n) {
+    //use >>> because n is unsigned  o(1)
+    public int hammingWeight2(int n) {
         int count = 0;
-        for (int i = 0; i < 32; i++) {
-            if ((n & 1) == 1) {
-                count += 1;
-            }
-            n >>= 1;
+        while (n != 0) {
+            count += n & 1;
+            n >>>= 1;
         }
         return count;
     }
