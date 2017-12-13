@@ -10,6 +10,7 @@ public class Main {
         System.out.println("output:" + m.addDigits(num));
     }
 
+    //about o(n) ?
     public int addDigits(int num) {
         int n = 0;
         while (num != 0) {
@@ -22,4 +23,12 @@ public class Main {
             return n;
         }
     }
+
+    // o(1)
+    public int addDigits2(int num) {
+
+
+    }
+
+    
 }
