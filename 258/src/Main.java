@@ -25,9 +25,9 @@ public class Main {
     }
 
     // o(1)
+    // 一个数的所有数字相加除以9的余数=这个数除以9的余数
     public int addDigits2(int num) {
         return 1 + (num - 1) % 9;
     }
-
 
 }
