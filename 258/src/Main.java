@@ -26,9 +26,8 @@ public class Main {
 
     // o(1)
     public int addDigits2(int num) {
-
-
+        return 1 + (num - 1) % 9;
     }
 
-    
+
 }
