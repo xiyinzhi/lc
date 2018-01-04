@@ -10,6 +10,7 @@ public class Main {
         System.out.println("output:" + m.countAndSay(n));
     }
 
+    //recursive o(n^2)
     public String countAndSay(int n) {
         StringBuilder sb = new StringBuilder();
         if (n == 1) {
