@@ -20,10 +20,11 @@ public class Main {
         return sbs;
     }
 
+    //recursive O(4^n)?
     public List<String> letterCombination(int offset, String digits, List<String> letters) {
         int n = digits.length();
         if (n == 0) {
-            return null;
+            return letters;
         }
         if (offset == n) {
             return letters;
@@ -39,7 +40,7 @@ public class Main {
             } else {
                 for (int k = 0; k < j; k++) {
                     StringBuilder sb = new StringBuilder(letters.get(k));
-                    sb.append(chars[k]);
+                    sb.append(chars[i]);
                     newLetters.add(sb.toString());
                 }
             }
