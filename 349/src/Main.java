@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -35,7 +32,7 @@ public class Main {
                     if (n > 0 && newNums.get(n - 1) != nums1[i]) {
                         newNums.add(nums1[i]);
                         break;
-                    }else if (n == 0){
+                    } else if (n == 0) {
                         newNums.add(nums1[i]);
                         break;
                     }
@@ -47,5 +44,65 @@ public class Main {
             answers[i] = newNums.get(i);
         }
         return answers;
+    }
+
+    //O(nlogn) binary search
+    public int[] intersection2(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Set<Integer> set = new HashSet<Integer>();
+        for (int i = 0; i < nums2.length; i++) {
+            if (binarySearch(nums1, nums2[i]) && !set.contains(nums2[i])) {
+                set.add(nums2[i]);
+            }
+        }
+        int[] res = new int[set.size()];
+        int i = 0;
+        for (Integer num : set) {
+            res[i] = num;
+            i++;
+        }
+        return res;
+    }
+
+    public boolean binarySearch(int[] nums, int target) {
+        int n = nums.length;
+        if (n == 1 && nums[0] == target) {
+            return true;
+        }
+        int low = 0;
+        int high = n - 1;
+
+        while (high >= low) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] == target) {
+                return true;
+            } else if (nums[mid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return false;
+    }
+
+    //O(n) use set.contain()
+    public int[] intersection3(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<Integer>();
+        Set<Integer> intersect = new HashSet<Integer>();
+        for (int i = 0; i < nums1.length; i++) {
+            set.add(nums1[i]);
+        }
+        for (int i = 0; i < nums2.length; i++) {
+            if (set.contains(nums2[i]) && !intersect.contains(nums2[i])) {
+                intersect.add(nums2[i]);
+            }
+        }
+        int i = 0;
+        int[] res = new int[intersect.size()];
+        for (Integer num : intersect) {
+            res[i] = num;
+            i++;
+        }
+        return res;
     }
 }
