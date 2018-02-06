@@ -47,6 +47,7 @@ public class Main {
             if (pointer.next.val == val) {
                 pointer.next = pointer.next.next;
             } else {
+                //这一句在else里！
                 pointer = pointer.next;
             }
         }
