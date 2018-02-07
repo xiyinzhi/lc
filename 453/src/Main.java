@@ -57,5 +57,25 @@ public class Main {
         return maxMark;
     }
 
-
+    /**
+     * Math! so easy!
+     * "incrementing n - 1 elements by 1" is equal to "minus 1 of the max number"
+     * so we should delete 1 a time until all numbers equals to min
+     * Time:O(n)
+     * Apace:O(1)
+     */
+    public int minMoves2(int[] nums) {
+        int count = 0;
+        int n = nums.length;
+        int min = nums[0];
+        for (int i = 1; i < n; i++) {
+            if (min > nums[i]) {
+                min = nums[i];
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            count += nums[i] - min;
+        }
+        return count;
+    }
 }
