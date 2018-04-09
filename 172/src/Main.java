@@ -9,7 +9,7 @@ public class Main {
         System.out.println(m.trailingZeroes2(n));
     }
 
-    //Time:O(n) Space:O(n)
+    //Time:O(n) Space:O(1)
     public int trailingZeroes(int n) {
         if (n < 1) {
             return 0;
@@ -26,16 +26,8 @@ public class Main {
         return k;
     }
 
+    //Time:O(log5(n)) Space:O(1) Point: find the number of factor 5 in n!
     public int trailingZeroes2(int n) {
-        if (n < 5) {
-            return 0;
-        }
-        int k = n / 5;
-        int c = (int) (Math.log(n) / Math.log(5)) - 1;
-        while (c != 0) {
-            k += c;
-            c--;
-        }
-        return k;
+        return n == 0 ? 0 : n / 5 + trailingZeroes2(n / 5);
     }
 }
