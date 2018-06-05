@@ -27,7 +27,7 @@ public class Main {
         }
     }
 
-    //Brute Force Time:O(n^2) Space:O(n)
+    //Brute Force Time:O(n^2) Space:O(n) 120ms
     public ListNode insertionSortList(ListNode head) {
         ListNode p = head;
         ListNode newList = null;
@@ -74,7 +74,7 @@ public class Main {
         return newList;
     }
 
-    //Time:O(n^2) Space:O(1) Faster, big improvement
+    //Time:O(n^2) Space:O(1) 7ms, Faster, big improvement
     public ListNode insertionSortList2(ListNode head) {
         if (head == null) {
             return head;
