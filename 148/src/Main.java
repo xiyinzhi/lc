@@ -30,7 +30,10 @@ public class Main {
         }
     }
 
+    //because we need to sort in Time:O(nlogn) Space:O(1)
+    //merge sort a linked list
     public ListNode sortList(ListNode head) {
+
         return head;
     }
 
