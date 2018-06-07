@@ -6,7 +6,8 @@ public class Main {
         System.out.println("Hello World!");
     }
 
-    //sorting Time:O(nlogn) Space:O(n)
+    // sorting
+    // Time:O(nlogn) Space:O(n)
     public boolean isAnagram(String s, String t) {
         int m = s.length();
         int n = t.length();
@@ -25,7 +26,8 @@ public class Main {
         return true;
     }
 
-    //without sorting Time:O(n) Space:O(n)
+    // without sorting, imagine a histogram
+    // Time:O(n) Space:O(n)
     public boolean isAnagram2(String s, String t) {
         int m = s.length();
         int n = t.length();
