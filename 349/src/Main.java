@@ -85,7 +85,7 @@ public class Main {
         return false;
     }
 
-    //O(n) use set.contain()
+    //O(n) use set.contain() but if consider set.contains(), it has a time complexity of O(n)
     public int[] intersection3(int[] nums1, int[] nums2) {
         Set<Integer> set = new HashSet<Integer>();
         Set<Integer> intersect = new HashSet<Integer>();
@@ -105,4 +105,21 @@ public class Main {
         }
         return res;
     }
+
+    public int[] intersection4(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>();
+        for (int i : nums1) {
+            set.add(i);
+        }
+        int[] res = new int[nums2.length];
+        int k = 0;
+        for (int i : nums2) {
+            if (set.remove(i)) {
+                res[k++] = i;
+            }
+        }
+        return Arrays.copyOfRange(res, 0, k);
+    }
+
+
 }
