@@ -83,4 +83,16 @@ public class Main {
         return Arrays.copyOfRange(res, 0, k);
     }
 
+//    Follow up:
+
+//    What if the given array is already sorted? How would you optimize your algorithm?
+//    A: Both algs can be optimized to O(n)
+
+//    What if nums1's size is small compared to nums2's size? Which algorithm is better?
+//    A: The only influence is that we can drop Math.min()
+
+//    What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
+//    A: Divide the elements of nums2 (n elements) into k chunks, read and sort each of them at one time,
+//      finally read n/k elements from each chunks, iterates(use merge sort)
+
 }
