@@ -9,6 +9,8 @@ public class Main {
         System.out.println(m.largestNumber(nums));
     }
 
+    // Point: use String.compareTo() method
+    // Time:O(n^2)？ Space:O(n)
     public String largestNumber(int[] nums) {
         int n = nums.length;
         if (n == 1) {
