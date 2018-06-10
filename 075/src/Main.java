@@ -9,6 +9,7 @@ public class Main {
         }
     }
 
+    // Time:O(n) Space:O(1)
     public void sortColors(int[] nums) {
         int r = 0, w = 0, b = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -28,6 +29,26 @@ public class Main {
             } else {
                 nums[i] = 2;
             }
+        }
+    }
+
+    // Time:O(n) Space:O(1)
+    public void sortColors2(int[] nums) {
+        // 1-pass
+        int p1 = 0, p2 = nums.length - 1, index = 0;
+        while (index <= p2) {
+            if (nums[index] == 0) {
+                nums[index] = nums[p1];
+                nums[p1] = 0;
+                p1++;
+            }
+            if (nums[index] == 2) {
+                nums[index] = nums[p2];
+                nums[p2] = 2;
+                p2--;
+                index--;
+            }
+            index++;
         }
     }
 }
