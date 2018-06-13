@@ -41,6 +41,7 @@ public class Main {
         //for example, even it is cited[100, 98, 0, 1, 5], we will only care about the number of cites including or below 5
         int n = citations.length; //n: number of articles
         int[] count = new int[n + 1];
+        //important thoughts
         for (int i : citations) {
             if (i < citations.length) {
                 count[i]++;
