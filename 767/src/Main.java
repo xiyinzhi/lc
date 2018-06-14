@@ -33,10 +33,8 @@ public class Main {
             }
         }
 
-        String str = new String();
-        for (int i = 0; i < n; i++) {
-            str += newCh[i];
-        }
+        // construct a String from char[]
+        String str = new String(newCh);
 
         return str;
     }
