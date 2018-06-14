@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // sorting
     // Time:O(nlogn) Space:O(1)
     public int maximumGap(int[] nums) {
         int n = nums.length;
@@ -25,6 +26,8 @@ public class Main {
         return dif;
     }
 
+    // without sorting
+    // Time:O(n) Space:O(n)
     public int maximumGap2(int[] nums) {
         int n = nums.length;
         if (n < 2) {
@@ -42,6 +45,8 @@ public class Main {
             return max - min;
         }
 
+        // core thought: "pigeon hole principle", put n objects in n-1 buckets, at least one bucket has 2 objects.
+        // So the max gap must be in different bucket("adjacent").
         int[] mins = new int[n];
         int[] maxs = new int[n];
         Arrays.fill(mins, MAX_VALUE);
