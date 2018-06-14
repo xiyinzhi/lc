@@ -4,6 +4,8 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // Time:O(n) Space:O(n)
+    // beat 100%, amazing!
     public String reorganizeString(String S) {
         char[] ch = S.toCharArray();
         int n = S.length();
@@ -12,24 +14,45 @@ public class Main {
         for (int i = 0; i < n; i++) {
             counts[ch[i]]++;
         }
+
+        int mark = 0;
         for (int i = 97; i < 123; i++) {
             if (counts[i] > (n + 1) / 2) {
                 return "";
+            } else if (counts[i] == (n + 1) / 2) {
+                mark = i;
             }
         }
+
         char[] newCh = new char[n];
         int j = 0, k = 1;
-        for (int i = 97; i < 123; i++) {
-            char temp = (char) i;
-            while (counts[i] != 0 && j < n) {
+        if (mark == 0) {
+            for (int i = 97; i < 123; i++) {
+                char temp = (char) i;
+                while (counts[i] != 0 && j < n) {
+                    newCh[j] = temp;
+                    j += 2;
+                    counts[i]--;
+                }
+                while (counts[i] != 0 && k < n) {
+                    newCh[k] = temp;
+                    k += 2;
+                    counts[i]--;
+                }
+            }
+        } else {
+            char temp = (char) mark;
+            while (j < n) {
                 newCh[j] = temp;
                 j += 2;
-                counts[i]--;
             }
-            while (counts[i] != 0 && k < n) {
-                newCh[k] = temp;
-                k += 2;
-                counts[i]--;
+            for (int i = 97; i < 123; i++) {
+                temp = (char) i;
+                while (i != mark && counts[i] != 0 && k < n) {
+                    newCh[k] = temp;
+                    k += 2;
+                    counts[i]--;
+                }
             }
         }
 
