@@ -26,9 +26,9 @@ public class Main {
 
         public void push(int x) {
             stack.push(x);
-            if(x<getMin()){
+            if (x < getMin()) {
                 minStack.push(x);
-            }else{
+            } else {
                 minStack.push(getMin());
             }
             top = x;
