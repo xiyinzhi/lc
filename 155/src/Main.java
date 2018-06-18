@@ -4,6 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+        Main m = new Main();
+        m.s();
+    }
+
+    public void s() {
+        MinStack2 minStack = new MinStack2();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        minStack.getMin();   // Returns -3.
+        minStack.pop();
+        minStack.top();      // Returns 0.
+        minStack.getMin();   // Returns -2.
     }
 
     class MinStack {
@@ -52,6 +65,35 @@ public class Main {
 
         public int getMin() {
             return Integer.parseInt(minStack.peek().toString());
+        }
+    }
+
+    class MinStack2 {
+
+        Stack<Integer> stack = new Stack<>();
+        int min = Integer.MAX_VALUE;
+
+        public void push(int x) {
+            if (x <= min) {
+                stack.push(min);
+                min = x;
+            }
+            stack.push(x);
+        }
+
+        public void pop() {
+            if (stack.peek() == min) {
+                stack.pop();
+                min = stack.pop();
+            } else stack.pop();
+        }
+
+        public int top() {
+            return stack.peek();
+        }
+
+        public int getMin() {
+            return min;
         }
     }
 
