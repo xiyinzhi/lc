@@ -16,6 +16,7 @@ public class Main {
         head.next.next = new ListNode(1);
         head.next.next.next = new ListNode(3);
         return head;
+
     }
 
     /**
@@ -25,6 +26,8 @@ public class Main {
         int val;
         ListNode next;
 
+
+
         ListNode(int x) {
             val = x;
         }
@@ -33,7 +36,6 @@ public class Main {
     //because we need to sort in Time:O(nlogn) Space:O(1)
     //merge sort a linked list
     public ListNode sortList(ListNode head) {
-
         return head;
     }
 
