@@ -16,7 +16,6 @@ public class Main {
         head.next.next = new ListNode(1);
         head.next.next.next = new ListNode(3);
         return head;
-
     }
 
     /**
