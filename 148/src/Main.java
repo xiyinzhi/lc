@@ -36,4 +36,8 @@ public class Main {
         return head;
     }
 
+    public ListNode mergeSort(ListNode head){
+
+
+    }
 }
