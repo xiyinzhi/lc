@@ -8,6 +8,9 @@ public class Main {
         System.out.println(m.threeSum(nums));
     }
 
+    // Time:O(n^3logn) Space:O(n)
+    // time limit exceed
+    // the point is to avoid duplicate lists
     public List<List<Integer>> threeSum(int[] nums) {
         Set<List<Integer>> resSet = new HashSet<>();
         int n = nums.length;
@@ -52,4 +55,33 @@ public class Main {
         }
         return resSet;
     }
+
+
+    // Time:O(n^2) Space:O(1)
+    public List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int i = 0; i + 2 < nums.length; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {              // skip same result
+                continue;
+            }
+            int j = i + 1, k = nums.length - 1;
+            int target = -nums[i];
+            while (j < k) {
+                if (nums[j] + nums[k] == target) {
+                    res.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    j++;
+                    k--;
+                    while (j < k && nums[j] == nums[j - 1]) j++;  // skip same result
+                    while (j < k && nums[k] == nums[k + 1]) k--;  // skip same result
+                } else if (nums[j] + nums[k] > target) {
+                    k--;
+                } else {
+                    j++;
+                }
+            }
+        }
+        return res;
+    }
+
 }
