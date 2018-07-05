@@ -37,4 +37,14 @@ public class Main {
             return false;
         }
     }
+
+//    Can you do it in O(N) time and O(1) space?
+//    I believe you have one difficulty here: When we meet a char, we are not sure if it will be still there or be deleted.
+//
+//    The point is iterating the String form the last Character!
+
+//    However, we can do a back string compare (just like the title of problem).
+//    If we do it backward, we meet a char and we can be sure this char won't be deleted.
+//    If we meet a '#', it tell us we need to skip next lowercase char.
+
 }
