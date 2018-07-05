@@ -6,6 +6,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // Time:O(n) Space:O(n)
     public boolean backspaceCompare(String S, String T) {
         Stack<Character> stackS = new Stack<>();
         Stack<Character> stackT = new Stack<>();
