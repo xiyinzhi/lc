@@ -4,6 +4,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // Time:O(n) Space:O(1)
     public int lengthOfLastWord(String s) {
         int n = s.length();
         int len = 0;
