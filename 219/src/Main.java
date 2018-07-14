@@ -34,6 +34,7 @@ public class Main {
     }
 
     // Time:O(n) Space:O(n) beat 100%
+    // HashMap.put()方法返回原value！
     public boolean containsNearbyDuplicate3(int[] nums, int k) {
         if (nums.length > 1000) return false;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
