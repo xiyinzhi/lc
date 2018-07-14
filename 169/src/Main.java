@@ -19,6 +19,7 @@ public class Main {
                 map.put(nums[i], 1);
             }
         }
+
         int k = 0;
         for (int key : map.keySet()) {
             if (map.get(key) > n / 2) {
@@ -26,6 +27,7 @@ public class Main {
                 break;
             }
         }
+
         return k;
     }
 
