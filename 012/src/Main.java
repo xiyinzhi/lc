@@ -6,6 +6,7 @@ public class Main {
         System.out.println(m.intToRoman(num));
     }
 
+    // Time:O(n) Space:O(n)
     public String intToRoman(int num) {
         char[] ch = Integer.toString(num).toCharArray();
         int n = ch.length;
