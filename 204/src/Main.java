@@ -29,7 +29,7 @@ public class Main {
         return set.size();
     }
 
-    // amazing & best sol with Time:O(n) Space:O(n)
+    // amazing sol with Time:O(n) Space:O(n)
     public int countPrimes2(int n) {
         boolean[] notPrime = new boolean[n];
         int count = 0;
@@ -38,6 +38,24 @@ public class Main {
                 count++;
                 for (int j = 2; i * j < n; j++) {
                     notPrime[i * j] = true;
+                }
+            }
+        }
+        return count;
+    }
+
+    // best sol with Time:O(n) Space:O(n)
+    public int countPrimes3(int n) {
+        if (n < 3) return 0;
+        boolean[] f = new boolean[n];
+        int count = n / 2;
+        for (int i = 3; i * i < n; i += 2) {
+            if (f[i]) continue;
+
+            for (int j = i * i; j < n; j += 2 * i) {
+                if (!f[j]) {
+                    --count;
+                    f[j] = true;
                 }
             }
         }
