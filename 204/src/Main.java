@@ -54,7 +54,7 @@ public class Main {
 
             for (int j = i * i; j < n; j += 2 * i) {
                 if (!f[j]) {
-                    --count;
+                    count--;
                     f[j] = true;
                 }
             }
