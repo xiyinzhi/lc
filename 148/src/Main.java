@@ -10,7 +10,7 @@ public class Main {
         }
     }
 
-    public ListNode defineLinkedList() {
+    protected ListNode defineLinkedList() {
         ListNode head = new ListNode(4);
         head.next = new ListNode(2);
         head.next.next = new ListNode(1);
@@ -30,6 +30,8 @@ public class Main {
         }
     }
 
+
+
     //because we need to sort in Time:O(nlogn) Space:O(1)
     //merge sort a linked list
     public ListNode sortList(ListNode head) {
@@ -39,6 +41,12 @@ public class Main {
 
     public ListNode mergeSort(ListNode head) {
 
+
+    }
+}
+
+class s extends Main{
+    public  ListNode defineLinkedList() {
 
     }
 }
