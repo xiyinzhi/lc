@@ -17,6 +17,8 @@ public class Main {
         }
     }
 
+    // recursive
+    // Time:O(n) Space:O(1)
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;
