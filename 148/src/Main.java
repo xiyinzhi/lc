@@ -44,9 +44,3 @@ public class Main {
 
     }
 }
-
-class s extends Main{
-    public  ListNode defineLinkedList() {
-
-    }
-}
