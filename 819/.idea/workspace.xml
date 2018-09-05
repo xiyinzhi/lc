@@ -28,8 +28,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-414">
-              <caret line="589" column="14" lean-forward="true" selection-start-line="589" selection-start-column="14" selection-end-line="589" selection-end-column="14" />
+            <state relative-caret-position="186">
+              <caret line="629" column="14" lean-forward="true" selection-start-line="629" selection-start-column="14" selection-end-line="629" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -46,6 +46,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -629,7 +630,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4641000" />
+    <option name="totallyTimeSpent" value="4669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -716,8 +717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414">
-          <caret line="589" column="14" lean-forward="true" selection-start-line="589" selection-start-column="14" selection-end-line="589" selection-end-column="14" />
+        <state relative-caret-position="186">
+          <caret line="629" column="14" lean-forward="true" selection-start-line="629" selection-start-column="14" selection-end-line="629" selection-end-column="14" />
           <folding />
         </state>
       </provider>
