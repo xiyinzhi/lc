@@ -4,6 +4,8 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    char[] str;
+    String s = str.toString();
 
     // Time:O(n) Space:O(n)
     public String reverseWords(String s) {
