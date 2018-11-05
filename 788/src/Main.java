@@ -4,6 +4,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // Time:O(logN) Space:O(1)
     public int rotatedDigits(int N) {
         int len = String.valueOf(N).length();
         int count = 0;
