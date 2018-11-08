@@ -31,7 +31,7 @@ public class Main {
                 break;
             }
         }
-        if(p2==null){
+        if (p2 == null) {
             return null;
         }
         p2 = head;
