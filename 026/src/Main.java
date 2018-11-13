@@ -20,4 +20,19 @@ public class Main {
         return p1;
     }
 
+    public int removeDuplicates2(int[] nums) {
+        int p1 = 0;
+        int p2 = 0;
+        int n = nums.length;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] != nums[p2]) {
+                nums[++p1] = nums[i];
+                p2 = i;
+            } else {
+                p2++;
+            }
+        }
+        return p1 + 1;
+    }
+
 }
