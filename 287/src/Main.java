@@ -18,5 +18,20 @@ public class Main {
         return 0;
     }
 
+    // Time:O(n) Space:O(n)
+    public int findDuplicate2(int[] nums) {
+        int n = nums.length;
+        int[] freq = new int[n];
+        for (int i = 0; i < n; i++) {
+            freq[nums[i]]++;
+        }
+        for (int i = 0; i < n; i++) {
+            if (freq[i] > 1) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
 
 }
