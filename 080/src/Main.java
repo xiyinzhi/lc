@@ -4,6 +4,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // Time:O(n) Space:O(1)
     public int removeDuplicates(int[] nums) {
         int p1 = 0;
         int p2 = 0;
