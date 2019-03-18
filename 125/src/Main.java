@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Output:" + m.isPalindrome(str));
     }
 
-    //O(n)
+    // Time:O(n) Space:O(n)
     public boolean isPalindrome(String s) {
         if (s.isEmpty()) {
             return true;
@@ -31,6 +31,7 @@ public class Main {
         return true;
     }
 
+    // Time:O(n) Space:O(n)
     public boolean isPalindrome2(String s) {
         StringBuilder sb = new StringBuilder();
         for (char c : s.toLowerCase().toCharArray()) {
