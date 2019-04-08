@@ -6,11 +6,15 @@ public class Main {
         System.out.println(main.numIslands(grid));
     }
 
+    // DFS Time:O(mn) Space:O(1)
     public int numIslands(char[][] grid) {
         if (grid == null) {
             return 0;
         }
         int n = grid.length;
+        if (n == 0) {
+            return 0;
+        }
         int m = grid[0].length;
         int count = 0;
         for (int i = 0; i < n; i++) {
