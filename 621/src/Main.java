@@ -3,9 +3,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        char[] tasks = {'A', 'A', 'B', 'B'};
+        char[] tasks = {'A', 'A', 'A', 'B', 'B', 'B'};
         Main main = new Main();
-        System.out.println(main.leastInterval(tasks, 2));
+        System.out.println(main.leastInterval2(tasks, 2));
     }
 
 
@@ -40,6 +40,31 @@ public class Main {
                 }
             }
             return (n + 1) * (count[25] - 1) + c;
+        }
+    }
+
+
+    // Time:O(n) Space:O(1)
+    public int leastInterval2(char[] tasks, int n) {
+        int len = tasks.length;
+        int[] counter = new int[26];
+        int max = 0;
+        int maxCount = 0;
+        for (char task : tasks) {
+            counter[task - 'A']++;
+            if (max == counter[task - 'A']) {
+                maxCount++;
+            } else if (max < counter[task - 'A']) {
+                max = counter[task - 'A'];
+                maxCount = 1;
+            }
+        }
+
+        int cubes = (max - 1) * (n + 1);
+        if (cubes >= len - maxCount) {
+            return cubes + maxCount;
+        } else {
+            return len;
         }
     }
 }
