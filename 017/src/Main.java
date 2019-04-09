@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -9,7 +7,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("input:");
         String digits = input.nextLine();
-        System.out.println("output:" + m.letterCombinations(digits));
+        System.out.println("output:" + m.letterCombinations2(digits));
     }
 
     private final static String[] KEYS = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
@@ -46,6 +44,36 @@ public class Main {
             }
         }
         return letterCombination(offset + 1, digits, newLetters);
+    }
+
+    public List<String> letterCombinations2(String digits) {
+        Map<Character, String> map = new HashMap<>();
+        map.put('2', "abc");
+        map.put('3', "def");
+        map.put('4', "ghi");
+        map.put('5', "jkl");
+        map.put('6', "mno");
+        map.put('7', "pqrs");
+        map.put('8', "tuv");
+        map.put('9', "wxyz");
+        List<String> list = new ArrayList<>();
+        for (char c : digits.toCharArray()) {
+            String s = map.get(c);
+            if (list.size() == 0) {
+                for (char ch : s.toCharArray()) {
+                    list.add(String.valueOf(ch));
+                }
+            } else {
+                List<String> newList = new ArrayList<>();
+                for (String str : list) {
+                    for (char ch : s.toCharArray()) {
+                        newList.add(str + String.valueOf(ch));
+                    }
+                }
+                list = newList;
+            }
+        }
+        return list;
     }
 
 }
