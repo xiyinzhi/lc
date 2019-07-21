@@ -13,6 +13,23 @@ public class Main {
         }
     }
 
+    // my iteration solution
+    public ListNode reverseList0(ListNode head) {
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode prev = head;
+        ListNode curr = head.next;
+        prev.next = null; // killing line, it will be a loop at the first step without this line.
+        while(curr!=null){
+            ListNode temp = prev;
+            prev = curr;
+            curr = curr.next;
+            prev.next = temp;
+        }
+        return prev;
+    }
+
     /**
      * iteration
      * insert each node in front of the reversedList
