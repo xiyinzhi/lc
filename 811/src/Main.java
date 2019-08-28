@@ -15,6 +15,7 @@ public class Main {
      * 坑1：regex for .
      * 坑2：使用indexof & substring 比 split快
      */
+    // Time:O(n) Space:O(n)
     public List<String> subdomainVisits(String[] cpdomains) {
         Map<String, Integer> map = new HashMap<>();
         int n = cpdomains.length;
