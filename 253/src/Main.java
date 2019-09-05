@@ -25,6 +25,7 @@ public class Main {
     }
 
     //O(nlogn) mainly based on sorting
+    // two pointers
     public int minMeetingRooms(Interval[] intervals) {
         int count = 0;
         int n = intervals.length;
