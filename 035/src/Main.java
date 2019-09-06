@@ -21,7 +21,7 @@ public class Main {
                 high = mid - 1;
             }
         }
-        if (low >= 0 && target < nums[low]) {
+        if (low > 0 && target < nums[low - 1]) {
             return high;
         } else {
             return low;
