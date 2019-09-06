@@ -4,6 +4,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // Time:O(logn) Space:O(1)
     public int searchInsert(int[] nums, int target) {
         int n = nums.length;
         if (n < 1) {
