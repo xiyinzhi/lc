@@ -6,14 +6,15 @@ public class Main {
 
     // math
     // recursive
-    // Time:O(logn) Space:O(1)
+    // Time:O(2^n) n:tree height Space:O(1)
+    // Problem: StackOverflowError
     public boolean reachingPoints(int sx, int sy, int tx, int ty) {
-        if(sx>tx||sy>ty){
+        if (sx > tx || sy > ty) {
             return false;
         }
-        if(sx==tx&&sy==ty){
+        if (sx == tx && sy == ty) {
             return true;
         }
-        return(reachingPoints(sx+sy,sy,tx,ty)||reachingPoints(sx,sx+sy,tx,ty));
+        return (reachingPoints(sx + sy, sy, tx, ty) || reachingPoints(sx, sx + sy, tx, ty));
     }
 }
