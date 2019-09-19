@@ -4,46 +4,35 @@ public class Main {
         System.out.println("Hello World!");
     }
 
+    // Time:O(Max(n1,n2)) Space:O(n1+n2)
     public String addStrings(String num1, String num2) {
-        if (num1 == null || num2 == null) {
-            return null;
-        }
         int n1 = num1.length();
         int n2 = num2.length();
-        int commonLength = 0;
-        int prefix = 0;
-        String preStr = new String();
-        if (n1 > n2) {
-            commonLength = n2;
-            prefix = n1 - n2;
-            preStr = num1.substring(0, n1 - n2);
-        } else {
-            commonLength = n1;
-            prefix = n2 - n1;
-            preStr = num1.substring(0, n2 - n1);
-        }
-        char[] ch1 = num1.toCharArray();
-        char[] ch2 = num2.toCharArray();
-        int[] add = new int[commonLength + 1];
-        char[] ch = new char[commonLength + 1];
-        for (int i = 0; i < commonLength; i++) {
-            int s = add[commonLength - i] + ch1[n1 - i - 1] + ch2[n2 - i - 1] - 2 * '0';
-            int r = 0;
-            if (s > 9) {
-                r = s - 10;
-                add[commonLength - i - 1] = 1;
-            } else {
-                r = s;
+        StringBuilder sb = new StringBuilder();
+        String num1Rev = new StringBuilder(num1).reverse().toString();
+        String num2Rev = new StringBuilder(num2).reverse().toString();
+        int d = 0;
+        for (int i = 0; i < Math.max(n1, n2); i++) {
+            int temp1 = 0;
+            int temp2 = 0;
+            if (n1 > i) {
+                temp1 = num1Rev.charAt(i) - '0';
             }
-            ch[commonLength - i] = (char) (r + '0');
+            if (n2 > i) {
+                temp2 = num2Rev.charAt(i) - '0';
+            }
+            int temp = temp1 + temp2 + d;
+            if (temp > 9) {
+                d = temp / 10;
+                temp = temp % 10;
+            } else {
+                d = 0;
+            }
+            sb.append(String.valueOf(temp));
         }
-        ch[0] = (char) (add[0] + '0');
-        if (preStr == null || preStr == "") {
-            return ch.toString();
-        } else {
-            char c = preStr.charAt(prefix - 1);
-            preStr = preStr.substring(0, prefix - 1);
-
+        if (d > 0) {
+            sb.append(d);
         }
+        return sb.reverse().toString();
     }
 }
