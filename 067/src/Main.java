@@ -82,4 +82,33 @@ public class Main {
         return str;
     }
 
+    public String addBinary3(String a, String b) {
+        int n1 = a.length();
+        int n2 = b.length();
+        StringBuilder sb = new StringBuilder();
+        int carry = 0;
+        for (int i = 0; i < Math.max(n1, n2); i++) {
+            int temp1 = 0;
+            int temp2 = 0;
+            if (i < n1) {
+                temp1 = a.charAt(n1 - i - 1) - '0';
+            }
+            if (i < n2) {
+                temp2 = b.charAt(n2 - i - 1) - '0';
+            }
+            int temp = carry + temp1 + temp2;
+            if (temp > 1) {
+                carry = 1;
+                temp = temp % 2;
+            } else {
+                carry = 0;
+            }
+            sb.append(String.valueOf(temp));
+        }
+        if (carry != 0) {
+            sb.append(carry);
+        }
+        return sb.reverse().toString();
+    }
+
 }
