@@ -11,7 +11,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         String num1Rev = new StringBuilder(num1).reverse().toString();
         String num2Rev = new StringBuilder(num2).reverse().toString();
-        int d = 0;
+        int carry = 0;
         for (int i = 0; i < Math.max(n1, n2); i++) {
             int temp1 = 0;
             int temp2 = 0;
@@ -21,17 +21,17 @@ public class Main {
             if (n2 > i) {
                 temp2 = num2Rev.charAt(i) - '0';
             }
-            int temp = temp1 + temp2 + d;
+            int temp = temp1 + temp2 + carry;
             if (temp > 9) {
-                d = temp / 10;
+                carry = temp / 10;
                 temp = temp % 10;
             } else {
-                d = 0;
+                carry = 0;
             }
             sb.append(String.valueOf(temp));
         }
-        if (d > 0) {
-            sb.append(d);
+        if (carry > 0) {
+            sb.append(carry);
         }
         return sb.reverse().toString();
     }
