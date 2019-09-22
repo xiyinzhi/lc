@@ -10,22 +10,21 @@ public class Main {
 
     // Time:O(n) Space:O(n)
     public int lengthOfLongestSubstring(String s) {
-        int maxLen = 0;
-        int n = s.length();
-        char[] ch = s.toCharArray();
         Set<Character> set = new HashSet<>();
-        int i = 0, j = 0;
-        while (j < n) {
-            if (set.contains(ch[j])) {
+        int i = 0;
+        int j = 0;
+        int maxLen = 0;
+        for (; j < s.length(); j++) {
+            if (set.contains(s.charAt(j))) {
                 maxLen = Math.max(maxLen, j - i);
-                i = s.indexOf(ch[j], i) + 1;
-                set.clear();
-                for (int k = i; k < j; k++) {
-                    set.add(ch[k]);
+                while (s.charAt(j) != s.charAt(i)) {
+                    set.remove(s.charAt(i));
+                    i++;
                 }
+                set.remove(s.charAt(i));
+                i++;
             }
-            set.add(ch[j]);
-            j++;
+            set.add(s.charAt(j));
         }
         maxLen = Math.max(maxLen, j - i);
         return maxLen;
