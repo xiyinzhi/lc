@@ -8,7 +8,10 @@ public class Main {
         System.out.println(m.lengthOfLongestSubstring("tmmzuxt"));
     }
 
-    // Time:O(n) Space:O(n)
+    /**
+     * Time:O(n) Space:O(1)
+     * 改进时间：去掉while循环，可用HashMap代替HashSet，value存Char出现的position
+     */
     public int lengthOfLongestSubstring(String s) {
         Set<Character> set = new HashSet<>();
         int i = 0;
