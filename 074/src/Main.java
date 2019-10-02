@@ -11,6 +11,8 @@ public class Main {
 
     // binary search
     // Time:O(log(m*n)) Space:O(1)
+    // pay attention to matrix: matrix[n][m]
+    // m:row(排), n:column(列)
     public static boolean searchMatrix(int[][] matrix, int target) {
         int n = matrix.length;
         if (n == 0) {
