@@ -15,13 +15,12 @@ public class Main {
         System.out.println("Output: " + num);
     }
 
-    //This difficulty should be at least medium
-    //TBC
+    // use n-dimension thinking
     public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
+        int n = minutesToTest / minutesToDie + 1;//minimun test circle numbers
         int num = 0;
-        int times = minutesToTest % minutesToDie == 0 ? minutesToTest / minutesToDie : minutesToTest / minutesToDie + 1;
-        for (int i = 1; i < buckets; i++) {
-
+        while ((long) Math.pow(n, num) < (long) buckets) {
+            num++;
         }
         return num;
     }
