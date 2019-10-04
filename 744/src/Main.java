@@ -29,4 +29,22 @@ public class Main {
         }
         return letters[low];
     }
+
+    // binary search
+    // time:O(logn), Space:O(1)
+    public char nextGreatestLetter2(char[] letters, char target) {
+        int n = letters.length;
+        int low = 0;
+        int high = n - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (letters[mid] <= target) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return letters[low % n];
+    }
+
 }
