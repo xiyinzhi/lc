@@ -18,4 +18,24 @@ public class Main {
         }
         return odd[n] + even[n];
     }
+
+    // 实际上就是斐波那契！
+    public int climbStairs2(int n) {
+        int prev = 1;
+        int next = 2;
+        if (n == 1) {
+            return 1;
+        } else if (n == 2) {
+            return 2;
+        } else {
+            while (n > 2) {
+                prev += next;
+                int temp = prev;
+                prev = next;
+                next = temp;
+                n--;
+            }
+            return next;
+        }
+    }
 }
