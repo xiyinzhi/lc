@@ -5,6 +5,8 @@ public class Main {
         System.out.println(sortedSquares(A));
     }
 
+    // 2 pointers
+    // Time:O(n) Space:O(n)
     public static int[] sortedSquares(int[] A) {
         int n = A.length;
         int[] res = new int[n];
@@ -18,6 +20,7 @@ public class Main {
             }
         }
         int i = 0;
+        // be careful, p1 cannot be equal to p2
         if (p2 == p1) {
             p1 = p2 - 1;
         }
