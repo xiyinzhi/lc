@@ -7,7 +7,7 @@ public class Main {
     }
 
     // so many edge cases
-    // Time:O(n) Space:O(1)
+    // Time:O(n) Space:O(1), but uses divisions, not very good
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         long maxProduct = 1;
@@ -42,5 +42,21 @@ public class Main {
             }
         }
         return nums;
+    }
+
+    // Time:O(n) Space:O(1), without division
+    public int[] productExceptSelf2(int[] nums) {
+        int n = nums.length;
+        int[] res = new int[n];
+        res[0] = 1;
+        for (int i = 1; i < n; i++) {
+            res[i] = res[i - 1] * nums[i - 1];
+        }
+        int p = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            res[i] *= p;
+            p *= nums[i];
+        }
+        return res;
     }
 }
