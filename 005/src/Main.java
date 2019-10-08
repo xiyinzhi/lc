@@ -6,6 +6,7 @@ public class Main {
 
     // Time:O(n^2) Space:O(n)
     // could be more efficient by recording start/end positions, and return the substring of s
+    // also helper() could be improved
     public String longestPalindrome(String s) {
         int n = s.length();
         int maxLen = 0;
