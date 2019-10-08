@@ -41,20 +41,40 @@ public class Main {
         throw new IllegalArgumentException("wrong input");
     }
 
-    // time-complexity o(n)
+    // time-complexity o(n), 2 pass
     public int[] twoSum2(int[] nums, int target) {
+        int[] res = new int[2];
         int n = nums.length;
-        int[] output = new int[2];
-        Map<Integer, Integer> map = new HashMap();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < n; i++) {
             map.put(nums[i], i);
         }
         for (int i = 0; i < n; i++) {
             int key = target - nums[i];
-            if (map.containsKey(key) && map.get(key) != i)
-                return new int[]{i, map.get(key)};
+            if (map.containsKey(key) && map.get(key) != i) {
+                res[0] = i;
+                res[1] = map.get(key);
+                return res;
+            }
         }
-        throw new IllegalArgumentException("wrong input");
+        return res;
+    }
+
+    // time-complexity o(n), 1 pass
+    public int[] twoSum3(int[] nums, int target) {
+        int[] res = new int[2];
+        int n = nums.length;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            int key = target - nums[i];
+            if (map.containsKey(key) && map.get(key) != i) {
+                res[0] = map.get(key);
+                res[1] = i;
+                return res;
+            }
+            map.put(nums[i], i);
+        }
+        return res;
     }
 
 }
