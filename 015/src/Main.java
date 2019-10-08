@@ -59,21 +59,33 @@ public class Main {
 
     // Time:O(n^2) Space:O(1)
     public List<List<Integer>> threeSum2(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
+        int n = nums.length;
         Arrays.sort(nums);
-        for (int i = 0; i + 2 < nums.length; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) {              // skip same result
+        int previ = 0;
+        for (int i = 0; i < n - 2; i++) {
+            if (i != 0 && nums[i] == nums[previ]) {
                 continue;
+            } else {
+                previ = i;
             }
-            int j = i + 1, k = nums.length - 1;
+            int j = i + 1;
+            int k = n - 1;
             int target = -nums[i];
+            int prevj = j;
+            int prevk = k;
             while (j < k) {
                 if (nums[j] + nums[k] == target) {
-                    res.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                    j++;
-                    k--;
-                    while (j < k && nums[j] == nums[j - 1]) j++;  // skip same result
-                    while (j < k && nums[k] == nums[k + 1]) k--;  // skip same result
+                    if (j != i + 1 && nums[j] == nums[prevj]) {
+                        j++;
+                        continue;
+                    } else {
+                        list.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                        prevj = j;
+                        prevk = k;
+                        j++;
+                        k--;
+                    }
                 } else if (nums[j] + nums[k] > target) {
                     k--;
                 } else {
@@ -81,7 +93,7 @@ public class Main {
                 }
             }
         }
-        return res;
+        return list;
     }
 
 }
