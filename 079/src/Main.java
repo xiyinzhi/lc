@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println((char) ('A' ^ 256));
         char[][] board = {{'A', 'B', 'C', 'E'},
                 {'S', 'F', 'C', 'S'},
                 {'A', 'D', 'E', 'E'}};
@@ -9,10 +10,11 @@ public class Main {
         System.out.println(main.exist(board, word));
     }
 
-    // DFS
+    // DFS, backtracking
     // Time:O(m*n*(4^k)) Space:O(m*n) k:length of String
 
     // todo: can save space to O(1) using char^256? see discuss
+    // if using char^256
     boolean[][] visited;
 
     public boolean exist(char[][] board, String word) {
