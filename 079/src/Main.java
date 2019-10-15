@@ -12,6 +12,7 @@ public class Main {
     // DFS
     // Time:O(m*n*(4^k)) Space:O(m*n) k:length of String
 
+    // todo: can save space to O(1) using char^256? see discuss
     boolean[][] visited;
 
     public boolean exist(char[][] board, String word) {
