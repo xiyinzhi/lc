@@ -25,6 +25,7 @@ public class Main {
             data = new HashMap<>();
         }
 
+        // O(logn)
         public void set(String key, String value, int timestamp) {
             if (data.containsKey(key)) {
                 TreeMap<Integer, String> treeMap = data.get(key);
@@ -37,6 +38,7 @@ public class Main {
         }
 
         // This solution is good, but get TLE, use map.floorKey() instead!
+        // O(n)
         public String get2(String key, int timestamp) {
             if (!data.containsKey(key)) {
                 return "";
@@ -55,6 +57,7 @@ public class Main {
             }
         }
 
+        // O(1)?
         public String get(String key, int timestamp) {
             TreeMap<Integer, String> treeMap = data.get(key);
             if (treeMap == null) {
@@ -69,6 +72,9 @@ public class Main {
         }
     }
 
+    /**
+     * best solution: 因为输入的时间是有序的！
+     */
     static class TimeMap2 {
         Map<String, List<Data>> map;
 
@@ -89,6 +95,7 @@ public class Main {
             map = new HashMap<>();
         }
 
+        // O(1)
         public void set(String key, String value, int timestamp) {
             List<Data> list = map.get(key);
             if (list == null) {
@@ -101,6 +108,7 @@ public class Main {
             }
         }
 
+        //O(logn)
         public String get(String key, int timestamp) {
             List<Data> list = map.get(key);
             if (list == null) {
