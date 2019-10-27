@@ -28,6 +28,8 @@ public class Main {
         return maxArea;
     }
 
+    // 注意这题和island perimeter的一大区别就是，值传递和引用传递，DFSMarking返回值不同
+    // 传int传递的是值
     public int DFSMarking(int[][] grid, int n, int m, int i, int j, int area) {
         if (i < 0 || i > n - 1 || j < 0 || j > m - 1 || grid[i][j] == 0) {
         } else {
