@@ -4,12 +4,13 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = new int[];
+        int[] nums = {};
         int k = 2;
         System.out.println(checkSubarraySum(nums, k));
     }
 
     // Time:O(n) Space:O(k)
+    // 这题其实和974是一样的？比974多一点条件
     public static boolean checkSubarraySum(int[] nums, int k) {
         int n = nums.length;
         if (k == 0) {
