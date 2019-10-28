@@ -7,7 +7,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 
-    //
+    // Time:O(n*2^n) Space:O(2^n)
     public List<List<Integer>> subsets(int[] nums) {
         int n = nums.length;
         List<List<Integer>> list = new ArrayList<>();
