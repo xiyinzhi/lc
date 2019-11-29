@@ -51,4 +51,58 @@ public class Main {
             return input.empty() && output.empty();
         }
     }
+
+    // 其实和用queue实现stack完全一样
+    class MyQueue2 {
+        private Stack<Integer> s1;
+        private Stack<Integer> s2;
+        private Integer top;
+
+        /**
+         * Initialize your data structure here.
+         */
+        public MyQueue2() {
+            s1 = new Stack();
+            s2 = new Stack();
+        }
+
+        /**
+         * Push element x to the back of queue.
+         */
+        public void push(int x) {
+            s1.push(x);
+            if (top == null) {
+                top = x;
+            }
+        }
+
+        /**
+         * Removes the element from in front of queue and returns that element.
+         */
+        public int pop() {
+            while (s1.size() > 1) {
+                s2.push(s1.pop());
+            }
+            top = s2.size() == 0 ? null : s2.peek();
+            int pop = s1.pop();
+            while (s2.size() > 0) {
+                s1.push(s2.pop());
+            }
+            return pop;
+        }
+
+        /**
+         * Get the front element.
+         */
+        public int peek() {
+            return top;
+        }
+
+        /**
+         * Returns whether the queue is empty.
+         */
+        public boolean empty() {
+            return s1.isEmpty();
+        }
+    }
 }
