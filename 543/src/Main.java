@@ -14,6 +14,9 @@ public class Main {
         }
     }
 
+    /**
+     * recursively: max(maxDia(left),maxDia(right),maxDep(left)+maxDep(right))
+     */
     public int diameterOfBinaryTree(TreeNode root) {
 
 
