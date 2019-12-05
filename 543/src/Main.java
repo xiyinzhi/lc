@@ -15,7 +15,8 @@ public class Main {
     }
 
     /**
-     * recursively: max(maxDia(left),maxDia(right),maxDep(left)+maxDep(right))
+     * recursively: 求每个node的左右最深depth之和
+     * Tme:O(n) Space:O(n)
      */
     public int diameterOfBinaryTree(TreeNode root) {
         maxDiameter = 0;
