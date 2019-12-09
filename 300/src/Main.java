@@ -33,4 +33,15 @@ public class Main {
         }
         return maxLen;
     }
+
+    /**
+     * Optimized, DP + Binary Search
+     * dp[i]: LIS of[0,i], including nums[i]
+     * Time:O(nlogn) Space:O(n)
+     *
+     * https://leetcode.com/problems/longest-increasing-subsequence/discuss/74880/JAVA-Easy-Version-To-Understand!!!!!!!!
+     */
+    public static int lengthOfLIS2(int[] nums) {
+
+    }
 }
